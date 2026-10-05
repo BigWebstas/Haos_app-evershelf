@@ -1,0 +1,16 @@
+name: EverShelf
+version: "1.0.0"
+slug: evershelf
+description: Self-hosted pantry manager server (pairs with the ha-evershelf integration)
+url: https://github.com/dadaloop82/EverShelf
+arch:
+  - amd64
+  - aarch64
+init: false
+startup: application
+boot: auto
+ports:
+  80/tcp: 8080
+ports_description:
+  80/tcp: EverShelf web interface
+webui: "http://[HOST]:[PORT:80]/"
