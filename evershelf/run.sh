@@ -10,6 +10,12 @@ ln -s /data /var/www/html/data
 # /var/www/html is sticky: the kernel only lets www-data follow a symlink it owns.
 chown -h www-data:www-data /var/www/html/data
 
+# Settings saved in the UI are written to .env: keep it on /data, writable by the app.
+[ -f /data/.env ] || cp /var/www/html/.env /data/.env
+chown www-data:www-data /data/.env
+ln -sf /data/.env /var/www/html/.env
+chown -h www-data:www-data /var/www/html/.env
+
 # Scheduled jobs (the image ships no cron), run as www-data so data/ stays writable.
 as_app() { su -s /bin/sh www-data -c "$1"; }
 
