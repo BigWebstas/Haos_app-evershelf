@@ -1,5 +1,5 @@
 name: EverShelf
-version: "1.0.0"
+version: "1.0.1"
 slug: evershelf
 description: Self-hosted pantry manager server (pairs with the ha-evershelf integration)
 url: https://github.com/dadaloop82/EverShelf
